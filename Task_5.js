@@ -62,10 +62,10 @@ function loadPhotos(apiData) {
 }
 
 function savePhotosToLocalStorage() {
-    localStorage.setItem("last_photos", photosContainer.innerHTML);
+    localStorage.setItem("last_photos", JSON.stringify(photosContainer.innerHTML));
 }
 
 function loadPhotosFromLocalStorage() {
-    photosContainer.innerHTML = localStorage.getItem("last_photos");
+    photosContainer.innerHTML = JSON.parse(localStorage.getItem("last_photos"));
     return  photosContainer.innerHTML.length > 0;
 }
